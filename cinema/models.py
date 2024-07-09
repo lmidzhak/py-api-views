@@ -23,7 +23,7 @@ class Actor(models.Model):
 
 
 class CinemaHall(models.Model):
-    name = models.CharField(max_length=255, unique=True)
+    name = models.CharField(max_length=255)
     rows = models.IntegerField()
     seats_in_row = models.IntegerField()
 
@@ -32,9 +32,6 @@ class CinemaHall(models.Model):
             f"Cinema hall {self.name}: {self.rows} rows "
             f"with {self.seats_in_row} in a row"
         )
-
-    class Meta:
-        verbose_name_plural = "cinema_halls"
 
 
 class Movie(models.Model):
